@@ -1,0 +1,17 @@
+<div id="screen" class="all-screen flex column justify-center align-center">
+    <div id="title-logo-container" class="flex column align-center">
+        <span id="logo">¥</span>
+        <span id="title">Minesweeper</span>
+    </div>
+
+    <div id="options">
+        <ng-container *ngFor="let option of gameOptions">
+            <button [routerLink]="['/game']" 
+                (click)="gameLauncher.createGame(option.config)">
+                {{option.title}}
+        </button>
+        </ng-container>
+        
+        <button routerLink="/custom-game">Custom</button>
+    </div>
+</div>

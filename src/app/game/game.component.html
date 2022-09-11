@@ -1,0 +1,46 @@
+<div id="game-screen" class="flex column">
+    <div *ngIf='isShowingMessage' class="message">
+        <div class="message__text" [style.backgroundColor]="messageColor">
+            {{message}}
+        </div>
+    </div>
+    <div id="options">
+        <span id="time" class="informations flex justify-center">
+            {{game.timeClock.minutes | number:'2.0-0' }} : {{game.timeClock.seconds |  number:'2.0-0' }}
+        </span>
+        
+        <div id="buttons" class="flex justify-center">
+            <button [disabled]="refreshDisabled"(click)="resetGame()">
+                <span class="material-icons">refresh</span>
+            </button>
+
+            <button [disabled]="pauseDisabled" (click)="pause()">
+                    <span class="material-icons">{{pauseIcon}}</span>
+            </button>
+
+            <button (click)="changeConfig()">
+                <span class="material-icons">settings</span>
+            </button>
+        </div>
+
+        <span id="mines" class="informations  flex justify-center"> 
+            £ {{game.markedMines}} | {{game.minesQuantity}}
+        </span>
+    </div>
+
+    <div id="board-pause-container" class="h-100 flex align-center">
+        <div id="paused" class="flex justify-center align-center" *ngIf="showPauseScreen">
+            Paused
+        </div>
+
+        <div *ngIf="!showPauseScreen">
+            <app-board
+                #board
+                [board]="boardView"
+                (rightClickEvent)="revealField($event)"
+                (leftClickEvent)="markMineField($event)"
+                (mouseOldEvent)="markMineField($event)">
+            </app-board>
+        </div>
+    </div>
+</div>

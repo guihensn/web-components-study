@@ -1,0 +1,130 @@
+#game-screen{
+    min-width: 100%;
+    min-height: 100%;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+#options{
+    max-width: 100vw;
+
+    display: grid;
+    grid-template-areas: 'time buttons mines';
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    padding: 10px;
+
+    background-color: #252F3D;
+}
+
+#board-pause-container{
+    flex: 1;
+}
+
+#board-pause-container > div{
+    margin: auto;
+}
+
+#time{
+    grid-area: time;
+}
+
+#buttons{
+    grid-area: buttons;
+}
+
+#mines{
+    grid-area: mines;
+}
+
+.informations{
+    font-size: 24px;
+}
+
+#paused{
+    width: 100vw;
+    height: 100vh;
+
+    font-size: 80px;
+
+    background-color: #B6D1D7;
+}
+
+button{
+    border-color: white;
+    background-color: #B6D1D7;
+}
+
+button[disabled]{
+    border-color: #a4becb;
+    background-color: #8aabb2;
+}
+
+.message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    z-index: 10;
+    
+    width: 100vw;
+    height: 100vh;
+
+    font-size: 80px;
+    animation: moveDown 0.1s forwards;
+}
+
+.message__text{
+    text-align: center;
+    width: 5em;
+}
+
+@keyframes moveDown {
+    0%{
+        transform: translateY(-100%)
+    }100%{
+        height: translateY(0%);
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .message__text{
+        font-size: 60px;
+    }
+}
+
+@media  screen and (max-width: 800px){
+    .message__text{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 380px){
+    #options{
+        grid-template-areas: 'time mines'     
+                             'buttons buttons';                   
+        gap: 10px
+                            
+    }
+
+    #buttons{
+        width: 100%
+    }
+
+    #time, #mines{
+        border-radius: 10px;
+        background-color: #a4becb;
+    }
+
+    #buttons{
+        border-radius: 10px;
+        background-color: #404e62;
+    }
+}

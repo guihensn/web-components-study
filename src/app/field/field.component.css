@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
+
+#field{ 
+    box-sizing:border-box;
+    position: relative;
+
+    border-radius: 10px;
+    min-width: 28px;
+    max-width: 150px;
+
+    user-select: none;
+}
+
+#field:hover{
+    cursor: pointer;
+    border: solid orange;
+    border-width: 4px;
+}
+
+svg{
+    font-size: 60px;
+}

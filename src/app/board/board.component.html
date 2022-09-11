@@ -1,0 +1,13 @@
+<div class="board" [style.grid-template-columns]="'repeat('+board?.width+', auto)'">
+    <ng-container *ngFor="let fieldLine of board?.fields; let lineNumber = index">
+        <ng-container *ngFor="let field of fieldLine; let columnNumber = index">
+            <app-field 
+                [fieldView]="field"
+                (mousedown)="mouseDown($event, lineNumber, columnNumber)"
+                (contextmenu)="leftClickPosition($event, lineNumber, columnNumber)"
+                (mouseup)="mouseUp($event, lineNumber, columnNumber)"
+                (mouseleave)="mouseLeave($event)">
+            </app-field>
+        </ng-container>
+    </ng-container>
+</div>

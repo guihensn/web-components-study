@@ -1,1 +1,85 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import "~@fortawesome/fontawesome-free/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
+
+*{
+  color: white;
+  font-family: 'Keania One', cursive;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.all-screen{
+  width: 100vw;
+  height: 100vh;
+}
+
+.flex{
+  display: flex;
+}
+
+
+.flex.column{
+  flex-direction: column;
+}
+
+.flex.row{
+  flex-direction: row;
+}
+
+.flex.align-center{
+  align-items: center;
+}
+
+.flex.justify-center{
+  justify-content: center;
+}
+
+.flex .wrap{
+  flex-wrap: wrap;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+}
+
+.h-100{
+  height: 100%;
+}
+
+.w-100{
+  width: 100%;
+}
+
+body{
+    background-color: #252F3D;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #72aedb; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+

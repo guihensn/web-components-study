@@ -1,0 +1,19 @@
+<div class="all-screen flex column justify-center align-center">
+  <div id="card">
+    <form ngNativeValidate [formGroup]="customGameForm" (ngSubmit)="createConfigs()">
+      <div *ngFor="let config of lenghtConfig">
+        <label [for]="config.id">
+          {{config.label}}
+        </label>
+        <input required [id]=config.id [min]=config.min [max]=config.max [formControlName]="config.formControlName" type="number">
+      </div>
+
+      <label [for]="minePercentageConfig.id">
+        {{minePercentageConfig.label}}
+      </label>
+      <input required [id]=minePercentageConfig.id [min]=minePercentageConfig.min [max]=minePercentageConfig.max [formControlName]="minePercentageConfig.formControlName" type="number">
+
+      <button class="button" type="submit">Create</button>
+    </form>
+  </div>
+</div>

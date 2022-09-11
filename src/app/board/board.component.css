@@ -1,0 +1,15 @@
+:host{
+    display:block; 
+}
+
+.board{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    
+    padding: 4px; 
+
+    overflow:auto;   
+}
+
